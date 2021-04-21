@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "voruti.disablejoinleavemessage.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "server": [
+    "PlayerManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
