@@ -19,42 +19,47 @@ import java.util.function.Function;
 @Mixin(PlayerManager.class)
 public class PlayerManagerMixin {
 
-    @Inject(method = "broadcast(Lnet/minecraft/text/Text;" +
-            "Ljava/util/function/Function;" +
-            "Lnet/minecraft/util/registry/RegistryKey;)V",
+    @Inject(method = "broadcast(Lnet/minecraft/text/Text;"
+            + "Ljava/util/function/Function;"
+            + "Lnet/minecraft/util/registry/RegistryKey;)V",
             at = @At("HEAD"),
             cancellable = true)
-    private void broadcastAlternative(Text message,
-                                      Function<ServerPlayerEntity, Text> playerMessageFactory,
-                                      RegistryKey<MessageType> typeKey,
-                                      CallbackInfo ci) {
+    private void broadcastAlternative(final Text message,
+                                      final Function<ServerPlayerEntity, Text>
+                                              playerMessageFactory,
+                                      final RegistryKey<MessageType> typeKey,
+                                      final CallbackInfo ci) {
         logic(message, ci);
     }
 
-    @Inject(method = "broadcast(Lnet/minecraft/network/message/SignedMessage;" +
-            "Ljava/util/function/Function;" +
-            "Lnet/minecraft/network/message/MessageSender;" +
-            "Lnet/minecraft/util/registry/RegistryKey;)V",
+    @Inject(method = "broadcast(Lnet/minecraft/network/message/SignedMessage;"
+            + "Ljava/util/function/Function;"
+            + "Lnet/minecraft/network/message/MessageSender;"
+            + "Lnet/minecraft/util/registry/RegistryKey;)V",
             at = @At("HEAD"),
             cancellable = true)
-    private void broadcastAlternative(SignedMessage message,
-                                      Function<ServerPlayerEntity, SignedMessage> playerMessageFactory,
-                                      MessageSender sender,
-                                      RegistryKey<MessageType> typeKey,
-                                      CallbackInfo ci) {
+    private void broadcastAlternative(final SignedMessage message,
+                                      final Function<ServerPlayerEntity,
+                                              SignedMessage>
+                                              playerMessageFactory,
+                                      final MessageSender sender,
+                                      final RegistryKey<MessageType> typeKey,
+                                      final CallbackInfo ci) {
         logic(message.getContent(), ci);
     }
 
 
-    private void logic(Text message, CallbackInfo info) {
-        if (message.getString().matches("^[a-zA-Z0-9_]{3,16} (joined|left) the game$")) {
+    private void logic(final Text message, final CallbackInfo info) {
+        if (message.getString().matches(
+                "^\\w{3,16} (joined|left) the game$")) {
             if (info.isCancellable()) {
                 DisableJoinLeaveMessage.LOGGER.log(Level.INFO,
                         "Canceling message \"{}\"", message.getString());
                 info.cancel();
             } else {
                 DisableJoinLeaveMessage.LOGGER.log(Level.WARN,
-                        "BroadcastChatMessage \"{}\" not cancellable", message.getString());
+                        "BroadcastChatMessage \"{}\" not cancellable",
+                        message.getString());
             }
         }
     }

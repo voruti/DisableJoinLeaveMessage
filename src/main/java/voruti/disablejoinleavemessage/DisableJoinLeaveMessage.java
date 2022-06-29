@@ -6,7 +6,8 @@ import org.apache.logging.log4j.Logger;
 
 public class DisableJoinLeaveMessage implements ModInitializer {
 
-    public static final Logger LOGGER = LogManager.getLogger(DisableJoinLeaveMessage.class);
+    public static final Logger LOGGER = LogManager.getLogger(
+            DisableJoinLeaveMessage.class);
 
     @Override
     public void onInitialize() {
