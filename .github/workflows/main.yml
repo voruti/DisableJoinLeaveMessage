@@ -17,7 +17,5 @@ jobs:
           java-version: 1.17
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Run tests
-        run: ./gradlew test
       - name: Build with Gradle
         run: ./gradlew -PbuildNo=${{ github.run_number }} remapJar
