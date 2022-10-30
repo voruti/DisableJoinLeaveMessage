@@ -1,6 +1,6 @@
 package voruti.disablejoinleavemessage.mixin;
 
-import net.minecraft.network.message.MessageSender;
+import net.minecraft.network.message.MessageSourceProfile;
 import net.minecraft.network.message.MessageType;
 import net.minecraft.network.message.SignedMessage;
 import net.minecraft.server.PlayerManager;
@@ -42,7 +42,7 @@ public class PlayerManagerMixin {
                                       final Function<ServerPlayerEntity,
                                               SignedMessage>
                                               playerMessageFactory,
-                                      final MessageSender sender,
+                                      final MessageSourceProfile sender,
                                       final RegistryKey<MessageType> typeKey,
                                       final CallbackInfo ci) {
         logic(message.getContent(), ci);
