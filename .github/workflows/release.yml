@@ -38,7 +38,7 @@ jobs:
         run: ./gradlew -PbuildNo=${{ github.run_number }} remapJar
       # --- from main.yml ---
 
-      - uses: "marvinpinto/action-automatic-releases@v1.1.1"
+      - uses: "marvinpinto/action-automatic-releases@v1.2.1"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
