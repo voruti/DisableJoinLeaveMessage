@@ -13,7 +13,7 @@ public class DisableJoinLeaveMessage implements ModInitializer {
             DisableJoinLeaveMessage.class);
 
     /**
-     * Announce mod startup.
+     * Runs the mod initializer.
      */
     @Override
     public void onInitialize() {
