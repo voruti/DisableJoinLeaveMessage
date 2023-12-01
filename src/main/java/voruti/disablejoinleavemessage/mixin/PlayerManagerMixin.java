@@ -8,6 +8,7 @@ import net.minecraft.text.Text;
 import org.apache.logging.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -47,6 +48,7 @@ public class PlayerManagerMixin {
     }
 
 
+    @Unique
     private void logic(final Text message, final CallbackInfo info) {
         if (message.getString().matches(
                 "^\\w{3,16} (joined|left) the game$")) {
