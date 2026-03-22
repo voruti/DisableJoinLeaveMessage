@@ -1,4 +1,2 @@
-/**
- * Package for the mixins.
- */
+/** Package for the mixins. */
 package voruti.disablejoinleavemessage.mixin;
