@@ -1,0 +1,4 @@
+rules:
+  archived-uses:
+    ignore:
+      - release.yml:46:16
