@@ -1,4 +1,4 @@
 rules:
   archived-uses:
     ignore:
-      - release.yml:49:16
+      - release.yml:51:16
