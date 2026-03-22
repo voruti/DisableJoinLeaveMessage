@@ -39,8 +39,6 @@ jobs:
         with:
           java-version: "21"
           distribution: "temurin"
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew -PbuildNo=${{ github.run_number }} remapJar
       # --- from main.yml ---
