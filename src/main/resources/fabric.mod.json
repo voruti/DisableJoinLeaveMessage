@@ -6,7 +6,8 @@
   "description": "Disables the join and leave messages on a server.",
   "authors": ["voruti"],
   "contact": {
-    "repo": "https://github.com/voruti/DisableJoinLeaveMessage"
+    "repo": "https://github.com/voruti/DisableJoinLeaveMessage",
+    "sources": "https://github.com/voruti/DisableJoinLeaveMessage"
   },
   "license": "MIT",
   "icon": "assets/disablejoinleavemessage/icon.png",
