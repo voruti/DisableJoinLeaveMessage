@@ -1,4 +1,3 @@
 rules:
   archived-uses:
-    ignore:
-      - release.yml
+    disable: true
