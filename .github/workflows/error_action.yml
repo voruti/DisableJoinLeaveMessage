@@ -39,3 +39,4 @@ jobs:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_BIOME_FORMAT: false
+          FILTER_REGEX_EXCLUDE: (^|/)gradlew$
