@@ -2,9 +2,8 @@ name: Java CI
 
 on:
   push:
-    paths-ignore:
-      - .gitignore
-      - README.md
+    branches:
+      - main
   pull_request:
 
 permissions:
