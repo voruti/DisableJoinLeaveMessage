@@ -4,9 +4,7 @@
   "version": "${version}",
   "name": "DisableJoinLeaveMessage",
   "description": "Disables the join and leave messages on a server.",
-  "authors": [
-    "voruti"
-  ],
+  "authors": ["voruti"],
   "contact": {
     "repo": "https://github.com/voruti/DisableJoinLeaveMessage"
   },
@@ -14,13 +12,9 @@
   "icon": "assets/disablejoinleavemessage/icon.png",
   "environment": "server",
   "entrypoints": {
-    "main": [
-      "voruti.disablejoinleavemessage.DisableJoinLeaveMessage"
-    ]
+    "main": ["voruti.disablejoinleavemessage.DisableJoinLeaveMessage"]
   },
-  "mixins": [
-    "disablejoinleavemessage.mixins.json"
-  ],
+  "mixins": ["disablejoinleavemessage.mixins.json"],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "minecraft": ">=${minecraft_version}"
