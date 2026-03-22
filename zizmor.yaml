@@ -1,4 +1,4 @@
 rules:
   archived-uses:
     ignore:
-      - .github/workflows/release.yml:49:16
+      - release.yml
